@@ -16,7 +16,53 @@
     <link rel="stylesheet" href="./Styles/style.css" />
   </head>
   <body>
-    <h1>Connect with us</h1>
+    <div class="container">
+      <h1>Connect with us</h1>
+      <form action="#" id="form">
+        <div class="form-control">
+          <label for="username">Enter username</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Enter Username"
+          />
+          <small>Username is required</small>
+        </div>
+        <div class="form-control">
+          <label for="email">Enter email</label>
+          <input
+            type="text"
+            name="email"
+            id="email"
+            placeholder="Enter Email"
+          />
+          <small>Email is required</small>
+        </div>
+        <div class="form-control">
+          <label for="password">Enter Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Enter Password"
+          />
+          <small>Password is required</small>
+        </div>
+        <div class="form-control">
+          <label for="confirm-password">Confirm a Password</label>
+          <input
+            type="password"
+            name="confirm-password"
+            id="confirm-password"
+            placeholder="Confirm-Password"
+          />
+          <small>Confirm password is required</small>
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
 
     <script src="./scripts/script.js"></script>
   </body>
