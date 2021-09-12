@@ -27,15 +27,15 @@ body {
 }
 .container {
   background-color: #ffff;
-  color: #1c2042;
-  box-shadow: 0 2px 10px rgba(164, 233, 37, 0.3);
-  width: 30rem;
+  color: #1126e7;
+  box-shadow: 0 2px 10px rgba(73, 35, 245, 0.3);
+  width: 35rem;
   border-radius: 0.5rem;
 }
 h1 {
   text-align: center;
   margin: 1rem;
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 form {
   padding: 2rem 3rem;
@@ -45,7 +45,6 @@ form {
   padding-bottom: 0.8rem;
   position: relative;
 }
-
 .form-control.error input {
   border-color: red;
 }
@@ -60,17 +59,17 @@ form {
 }
 .form-control input {
   display: block;
-  color: var(--clr-dark);
+  color: #1126e7;
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
   width: 100%;
   padding: 0.5rem;
-  border-radius: 0.5rem;
-  border: 2px solid var(--clr-dark);
+  border-radius: 0.3rem;
+  border: 2px solid #1126e7;
 }
 .form-control input:focus {
   outline: 0;
-  border-color: #1c2042;
+  border-color: #000108;
 }
 .form-control small {
   display: block;
@@ -88,7 +87,7 @@ form {
 }
 button {
   cursor: pointer;
-  background-color: var(--clr-dark);
+  background-color: #1126e7;
   border: 2px solid var(--clr-dark);
   border-radius: 0.5rem;
   font-size: 1.4rem;
