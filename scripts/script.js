@@ -5,6 +5,8 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const confirmPassword = document.getElementById('confirm-password');
 
+const inputArr = [username, email, password, confirmPassword];
+
 // Functions
 const showError = function (input, message) {
   const formControl = input.parentElement;
@@ -25,35 +27,53 @@ const isValidEmail = function (email) {
   return re.test(String(email).toLowerCase());
 };
 
+const message = function (input) {
+  let errorMessage = input.id.replace(/-p/, `P`);
+  return errorMessage.charAt(0).toUpperCase() + errorMessage.slice(1);
+};
+
+const checkEmail = function (input) {
+  if (isValidEmail(input.value)) {
+    showSuccess(input);
+  } else {
+    showError(input, 'Not a valid email');
+  }
+};
+
+const checkRequired = function (inputArr) {
+  inputArr.forEach((input) => {
+    if (input.value === '') {
+      showError(input, `It is less`);
+    } else {
+      showSuccess(username);
+    }
+  });
+};
+
+const checkLength = function (input, min, max) {
+  if (input.value.length < min) {
+    showError(input, `${message(input)} must be at least ${min} charecters`);
+  } else if (input.value.length > max) {
+    showError(input, `${message(input)} must be more than ${max} charecters`);
+  } else {
+    showSuccess(input);
+  }
+};
+
+const checkPasswordMatch = function (password, confirmPassword) {
+  if (password.value !== confirmPassword.value) {
+    showSuccess(password);
+    showSuccess(confirmPassword);
+  } else {
+    showError(confirmPassword, 'Confirm password is not matched');
+  }
+};
 // Event listeners
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  if (username.value === '') {
-    console.log('Username is required');
-    showError(username, 'Username is required');
-  } else {
-    showSuccess(username);
-  }
-  if (email.value === '') {
-    console.log('Email is required');
-    showError(email, 'Email is required');
-  } else if (!isValidEmail(email.value)) {
-    showError(email, 'Email is not valid');
-  } else {
-    showSuccess(email);
-  }
-  if (password.value === '') {
-    console.log('Password is required');
-    showError(password, 'Password is required');
-  } else {
-    showSuccess(password);
-  }
-  if (confirmPassword.value === '') {
-    console.log('Confirm Password is required');
-    showError(confirmPassword, 'Confirm password is required');
-  } else if (password !== confirmPassword) {
-    showError(confirmPassword, 'Confirm password is not matched');
-  } else {
-    showSuccess(confirmPassword);
-  }
+  checkRequired(inputArr);
+  checkEmail(email);
+  checkLength(username, 7, 12);
+  checkLength(password, 8, 12);
+  checkPasswordMatch(password, confirmPassword);
 });

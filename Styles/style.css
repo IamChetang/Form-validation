@@ -25,7 +25,7 @@ body {
   min-height: 100vh;
 }
 .container {
-  background-color: #ffff;
+  background-color: rgb(240, 235, 235);
   color: #1126e7;
   box-shadow: 0 2px 10px rgba(73, 35, 245, 0.3);
   width: 35rem;
